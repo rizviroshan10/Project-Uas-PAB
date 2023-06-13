@@ -7,7 +7,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "ananda.if4b.tulis_aja"
+        applicationId "com.uas.library"
         minSdk 24
         targetSdk 33
         versionCode 1

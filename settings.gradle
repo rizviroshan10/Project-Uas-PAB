@@ -12,5 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "Tulis_Aja"
+rootProject.name = "library"
 include ':app'
