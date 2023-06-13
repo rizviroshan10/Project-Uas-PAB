@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
+    tools:context=".RegisterActivity"
+    android:background="@drawable/background">
 
     <LinearLayout
         android:id="@+id/l1_register"
@@ -16,7 +17,6 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:src="@drawable/ic_event_note_24"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="30dp"
             android:layout_gravity="center"/>
@@ -29,6 +29,7 @@
             <EditText
                 android:id="@+id/et_username"
                 android:layout_width="match_parent"
+                android:layout_marginTop="250dp"
                 android:layout_height="wrap_content"
                 android:hint="Username"
                 android:inputType="text"/>
@@ -68,6 +69,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Register"
+            android:backgroundTint="@color/black"
             android:layout_marginTop="16dp"/>
 
         <Button
@@ -76,6 +78,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Sudah pernah daftar? Silahkan langsung login"
+            android:textColor="#035FFF"
             android:textAllCaps="false"
             android:textSize="14sp"/>
     </LinearLayout>
