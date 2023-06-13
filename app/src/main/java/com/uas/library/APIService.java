@@ -40,7 +40,7 @@ public interface APIService {
 
     @FormUrlEncoded
     @PUT("post")
-    Call<<ValueData<Post>> updatePost(@Field("id") String id,
+    Call<ValueData<Post>> updatePost(@Field("id") String id,
                                  @Field("foto") String foto,
                                  @Field("judul") String judul,
                                  @Field("content") String content,
@@ -48,5 +48,5 @@ public interface APIService {
 
 
     @DELETE("post/{id}")
-    Call<<ValueData<Post>> deletePost(@Field("id") String id);
+    Call<ValueData<Post>> deletePost(@Field("id") String id);
 }
