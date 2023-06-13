@@ -13,32 +13,32 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+
         <activity
             android:name=".UpdatePostActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/Theme.Tulis_Aja.ActionBar"/>
-        <activity
-            android:name=".AddPostActivity"
-            android:exported="false"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/Theme.Tulis_Aja.ActionBar" />
+            android:theme="@style/Theme.library.ActionBar" /> <!-- <activity -->
+        <!-- android:name=".AddPostActivity" -->
+        <!-- android:exported="false" -->
+        <!-- android:parentActivityName=".MainActivity" -->
+        <!-- android:theme="@style/Theme.Tulis_Aja.ActionBar" /> -->
         <activity
             android:name=".LoginActivity"
             android:exported="false"
-            android:theme="@style/Theme.Tulis_Aja" />
+            android:theme="@style/Theme.library" />
         <activity
             android:name=".MainActivity"
             android:exported="false"
-            android:theme="@style/Theme.Tulis_Aja.ActionBar" />
+            android:theme="@style/Theme.library.ActionBar" />
         <activity
             android:name=".RegisterActivity"
             android:exported="false"
-            android:theme="@style/Theme.Tulis_Aja" />
+            android:theme="@style/Theme.library" />
         <activity
             android:name=".SplashActivity"
             android:exported="true"
-            android:theme="@style/Theme.Tulis_Aja">
+            android:theme="@style/Theme.library">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -3,13 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="6dp"
+    android:background="#819A0C"
     android:elevation="32dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="6dp"
-        android:background="#dcdcdc">
+        android:background="#DFFACE">
 
         <ImageView
             android:id="@+id/iv_foto"
