@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.uas.library", appContext.getPackageName());
+        assertEquals("ananda.if4b.tulis_aja", appContext.getPackageName());
     }
 }

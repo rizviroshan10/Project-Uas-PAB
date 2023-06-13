@@ -1,5 +1,6 @@
 package com.uas.library;
 
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,23 +8,20 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.rizvi.tulisaja.databinding.ActivityLoginBinding;
-
+import com.uas.library.databinding.ActivityLoginBinding;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-
 public class LoginActivity extends AppCompatActivity {
     private ActivityLoginBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        getSupportActionBar().hide();
 
         binding.btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,65 +30,68 @@ public class LoginActivity extends AppCompatActivity {
                 String password = binding.etPassword.getText().toString();
 
                 boolean bolehLogin = true;
-                if(TextUtils.isEmpty(username)){
+                if (TextUtils.isEmpty(username)) {
                     bolehLogin = false;
-                    binding.etUsername.setError("Username tdk boleh kosong");
+                    binding.etUsername.setError("Username tidak boleh kosong");
                 }
-                if(TextUtils.isEmpty(password)){
+                if (TextUtils.isEmpty(password)) {
                     bolehLogin = false;
-                    binding.etPassword.setError("Password tdk boleh kosong");
+                    binding.etPassword.setError("Password tidak boleh kosong");
                 }
-                if (bolehLogin){
-                    login(username,password);
+                
+                if (bolehLogin) {
+                    login(username, password);
                 }
             }
-
-
         });
+
         binding.btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
                 finish();
             }
         });
     }
+
     private void login(String username, String password) {
         binding.progressBar.setVisibility(View.VISIBLE);
-        //memanggil API LOGIN
-        APIService apilogin = Utility.getRetrofit().create(APIService.class);
-        Call<ValueNoData> call = apilogin.login("dirumahaja",username,password);
-        call.enqueue(new Callback<ValueNoData>() {
+        APIService api = Utility.getRetrofit().create(APIService.class);
+        Call<ValueData> call = api.login( username, password);
+        call.enqueue(new Callback<ValueData>() {
             @Override
-            public void onResponse(Call<ValueNoData> call, Response<ValueNoData> response) {
-                if (response.code()==200){
+            public void onResponse(Call<ValueData> call, Response<ValueData> response) {
+                if (response.code() == 200) {
+                    binding.progressBar.setVisibility(View.GONE);
                     int success = response.body().getSuccess();
                     String message = response.body().getMessage();
 
-                    if (success == 1){
+                    if (success == 1) {
                         Toast.makeText(LoginActivity.this, message, Toast.LENGTH_SHORT).show();
-                        Utility.setValue(LoginActivity.this,"xUsername",username);
+                        Utility.setValue(LoginActivity.this, "xUsername", username);
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         startActivity(intent);
                         finish();
-                    }else{
+                    } else {
                         Toast.makeText(LoginActivity.this, message, Toast.LENGTH_SHORT).show();
+
                     }
-                }else{
-                    Toast.makeText(LoginActivity.this, "Response "+ response.code(), Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(LoginActivity.this, "Response" + response.code(), Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
-            public void onFailure(Call<ValueNoData> call, Throwable t) {
+            public void onFailure(Call<ValueData> call, Throwable t) {
                 binding.progressBar.setVisibility(View.GONE);
-                System.out.println("Retrofit Error : "+ t.getMessage());
-                Toast.makeText(LoginActivity.this, "Retrofit error : "+ t.getMessage(), Toast.LENGTH_SHORT).show();
-
-
+                System.out.println("Retrofit Error : " + t.getMessage());
+                Toast.makeText(LoginActivity.this, "Retrofit Error" + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
+
+
         });
+
 
     }
 }
