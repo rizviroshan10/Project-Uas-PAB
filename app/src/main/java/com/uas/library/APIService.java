@@ -3,13 +3,15 @@ package com.uas.library;
 import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 
 public interface APIService {
-    @GET("post")
+    @POST("post")
     Call<ValueData<List<Post>>> getPost();
 
     @FormUrlEncoded
@@ -28,18 +30,21 @@ public interface APIService {
     @FormUrlEncoded
     @POST("post")
     Call<ValueNoData> addPost(
-            @Field("userId") String userId,
+            @Field("user_id") String user_id,
             @Field("foto") String foto,
             @Field("judul") String judul,
-            @Field("deskripsi") String deskripsi,
-            @Field("karya") String karya );
+            @Field("content") String content);
+
 
     @FormUrlEncoded
-    @POST("post")
+    @PUT("post")
     Call<ValueNoData> updatePost(@Field("id") String id,
-                              @Field("content") String content);
+                                 @Field("foto") String foto,
+                                 @Field("judul") String judul,
+                                 @Field("content") String content,
+                                 @Field("jumlah") int jumlah);
 
-    @FormUrlEncoded
-    @POST("post/{id}")
+
+    @DELETE("post/{id}")
     Call<ValueNoData> deletePost(@Field("id") String id);
 }
