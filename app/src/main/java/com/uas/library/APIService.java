@@ -14,22 +14,25 @@ public interface APIService {
 
     @FormUrlEncoded
     @POST("auth/login")
-    Call<ValueData> login(
+    Call<ValueData<User>> login(
                           @Field("username") String username,
                           @Field("password") String password);
 
 
     @FormUrlEncoded
     @POST("auth/register")
-    Call<ValueData> register(
+    Call<ValueData<User>> register(
                              @Field("username") String username,
                              @Field("password") String password);
 
     @FormUrlEncoded
     @POST("post")
     Call<ValueNoData> addPost(
-            @Field("username") String username,
-            @Field("content") String content, String foto, String judul, String lokasi);
+            @Field("userId") String userId,
+            @Field("foto") String foto,
+            @Field("judul") String judul,
+            @Field("deskripsi") String deskripsi,
+            @Field("karya") String karya );
 
     @FormUrlEncoded
     @POST("post")
