@@ -88,8 +88,6 @@ public class LoginActivity extends AppCompatActivity {
                 System.out.println("Retrofit Error : " + t.getMessage());
                 Toast.makeText(LoginActivity.this, "Retrofit Error" + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
-
-
         });
 
 

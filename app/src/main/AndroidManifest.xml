@@ -16,16 +16,13 @@
         <activity
             android:name=".AddPostActivity"
             android:exported="false"
+            android:parentActivityName=".MainActivity"
             android:theme="@style/Base.Theme.library.ActionBar"/>
         <activity
             android:name=".UpdatePostActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/Theme.library.ActionBar" /> <!-- <activity -->
-        <!-- android:name=".AddPostActivity" -->
-        <!-- android:exported="false" -->
-        <!-- android:parentActivityName=".MainActivity" -->
-        <!-- android:theme="@style/Theme.Tulis_Aja.ActionBar" /> -->
+            android:theme="@style/Theme.library.ActionBar" />
         <activity
             android:name=".LoginActivity"
             android:exported="false"

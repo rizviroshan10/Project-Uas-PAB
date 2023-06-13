@@ -103,17 +103,17 @@ public class MainActivity extends AppCompatActivity {
 
     private void deletePost(String id) {
         APIService api = Utility.getRetrofit().create(APIService.class);
-        Call<ValueData<Post>> call = api.deletePost(id);
-        call.enqueue(new Callback<ValueData<Post>>() {
+        Call<ValueData<User>> call = api.deletePost(id);
+        call.enqueue(new Callback<ValueData<User>>() {
             @Override
-            public void onResponse(Call<ValueData<Post>> call, Response<ValueData<Post>> response) {
+            public void onResponse(Call<ValueData<User>> call, Response<ValueData<User>> response) {
                 if (response.code() == 200) {
                     int success = response.body().getSuccess();
                     String message = response.body().getMessage();
 
                     if (success == 1) {
                         Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
-                        post();
+                        getAllPost();
                     } else {
                         Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
                     }
@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<ValueData<Post>> call, Throwable t) {
+            public void onFailure(Call<ValueData<User>> call, Throwable t) {
                 System.out.println("Retrofit Error : " + t.getMessage());
                 Toast.makeText(MainActivity.this, "Retrofit Error : " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void post() {
+    private void getAllPost() {
         binding.progressBar.setVisibility(View.VISIBLE);
         APIService api = Utility.getRetrofit().create(APIService.class);
         Call<ValueData<List<Post>>> call = api.getPost();
@@ -168,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        post();
+        getAllPost();
     }
 
     @Override

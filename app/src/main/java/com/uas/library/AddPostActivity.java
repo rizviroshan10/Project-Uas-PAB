@@ -41,20 +41,20 @@ public class AddPostActivity extends AppCompatActivity {
                 }
 
                 if (bolehPost) {
-                    String user_Id = Utility.getValue(AddPostActivity.this, "xUserId");
-                    addPost(user_Id,judul, content, foto, jumlah);
+                    String id = Utility.getValue(AddPostActivity.this, "xUserId");
+                    addPost(id,judul, content, foto, jumlah);
                 }
             }
         });
     }
 
-    private void addPost(String user_Id, String judul, String content, String foto,  int jumlah) {
+    private void addPost(String id, String judul, String content, String foto,  int jumlah) {
         binding.progressBar.setVisibility(View.VISIBLE);
         APIService api = Utility.getRetrofit().create(APIService.class);
-        Call<ValueData<Post>> call = api.addPost(user_Id, judul, content, foto, jumlah );
-        call.enqueue(new Callback<ValueData<Post>>() {
+        Call<ValueData<User>> call = api.addPost(id, judul, content, foto, jumlah );
+        call.enqueue(new Callback<ValueData<User>>() {
             @Override
-            public void onResponse(Call<ValueData<Post>> call, Response<ValueData<Post>> response) {
+            public void onResponse(Call<ValueData<User>> call, Response<ValueData<User>> response) {
                 binding.progressBar.setVisibility(View.GONE);
                 if (response.code() == 200) {
                     int success = response.body().getSuccess();
@@ -72,7 +72,7 @@ public class AddPostActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<ValueData<Post>> call, Throwable t) {
+            public void onFailure(Call<ValueData<User>> call, Throwable t) {
                 binding.progressBar.setVisibility(View.GONE);
                 System.out.println("Retrofit Error : " + t.getMessage());
                 Toast.makeText(AddPostActivity.this, "Retrofit Error : " + t.getMessage(), Toast.LENGTH_SHORT).show();

@@ -43,10 +43,10 @@
             android:ellipsize="end"
             android:justificationMode="inter_word"/>
         <TextView
-            android:id="@+id/tv_karya"
+            android:id="@+id/tv_jumlah"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="karya "
+            android:text="00 "
 
             android:textColor="@color/black"
             android:layout_toRightOf="@+id/iv_foto"

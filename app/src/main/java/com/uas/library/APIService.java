@@ -6,31 +6,35 @@ import retrofit2.Call;
 import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+
+
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
+import retrofit2.http.Path;
 
 public interface APIService {
-    @POST("post")
+
+    @GET("post")
     Call<ValueData<List<Post>>> getPost();
+
 
     @FormUrlEncoded
     @POST("auth/login")
     Call<ValueData<User>> login(
-                          @Field("username") String username,
-                          @Field("password") String password);
-
+            @Field(("username"))String username,
+            @Field(("password"))String password);
 
     @FormUrlEncoded
     @POST("auth/register")
     Call<ValueData<User>> register(
-                             @Field("username") String username,
-                             @Field("password") String password);
+            @Field(("username"))String username,
+            @Field(("password"))String password);
 
     @FormUrlEncoded
     @POST("post")
-    Call<ValueData<Post>> addPost(
-            @Field("user_id") String user_id,
+    Call<ValueData<User>> addPost(
+            @Field("id") String UserId,
             @Field("judul") String judul,
             @Field("content") String content,
             @Field("foto") String foto,
@@ -44,7 +48,7 @@ public interface APIService {
 
     @FormUrlEncoded
     @PUT("post")
-    Call<ValueData<Post>> updatePost(
+    Call<ValueData<User>> updatePost(
                                  @Field("id") String id,
                                  @Field("judul") String judul,
                                  @Field("content") String content,
@@ -53,5 +57,5 @@ public interface APIService {
 
 
     @DELETE("post/{id}")
-    Call<ValueData<Post>> deletePost(@Field("id") String id);
+    Call<ValueData<User>> deletePost(@Path("id") String id);
 }
