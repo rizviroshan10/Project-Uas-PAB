@@ -91,6 +91,13 @@ public class MainActivity extends AppCompatActivity {
         });
         binding.rvPost.setLayoutManager(new LinearLayoutManager(this));
         binding.rvPost.setAdapter(postViewAdapter);
+        binding.fabInput.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AddPostActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

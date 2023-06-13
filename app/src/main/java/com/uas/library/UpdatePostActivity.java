@@ -43,16 +43,16 @@ public class UpdatePostActivity extends AppCompatActivity {
                 }
 
                 if (bolehUpdatePost) {
-                    updatePost(id,foto,judul,jumlah, content);
+                    updatePost(id,judul, content,foto,jumlah);
                 }
             }
         });
     }
 
-    private void updatePost(String id,String foto,String judul, int jumlah, String content) {
+    private void updatePost(String id,String judul,  String content,String foto,int jumlah) {
         binding.progressBar.setVisibility(View.VISIBLE);
         APIService api = Utility.getRetrofit().create(APIService.class);
-        Call<ValueData<Post>> call = api.updatePost(id, foto, judul, content,jumlah);
+        Call<ValueData<Post>> call = api.updatePost(id, judul, content, foto, jumlah);
         call.enqueue(new Callback<ValueData<Post>>() {
             @Override
             public void onResponse(Call<ValueData<Post>> call, Response<ValueData<Post>> response) {

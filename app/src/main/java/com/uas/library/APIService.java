@@ -38,12 +38,17 @@ public interface APIService {
 
 
 
+
+
+
+
     @FormUrlEncoded
     @PUT("post")
-    Call<ValueData<Post>> updatePost(@Field("id") String id,
-                                 @Field("foto") String foto,
+    Call<ValueData<Post>> updatePost(
+                                 @Field("id") String id,
                                  @Field("judul") String judul,
                                  @Field("content") String content,
+                                 @Field("foto") String foto,
                                  @Field("jumlah") int jumlah);
 
 
