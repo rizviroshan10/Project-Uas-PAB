@@ -31,9 +31,11 @@ public interface APIService {
     @POST("post")
     Call<ValueNoData> addPost(
             @Field("user_id") String user_id,
-            @Field("foto") String foto,
             @Field("judul") String judul,
-            @Field("content") String content);
+            @Field("content") String content,
+            @Field("foto") String foto,
+            @Field("jumlah") int jumlah);
+
 
 
     @FormUrlEncoded

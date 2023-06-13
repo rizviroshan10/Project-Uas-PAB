@@ -13,7 +13,10 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-
+        <activity
+            android:name=".AddPostActivity"
+            android:exported="false"
+            android:theme="@style/Base.Theme.library.ActionBar"/>
         <activity
             android:name=".UpdatePostActivity"
             android:exported="false"
