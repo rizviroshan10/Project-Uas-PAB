@@ -51,10 +51,10 @@ public class AddPostActivity extends AppCompatActivity {
     private void addPost(String userId, String content, String foto, String judul, int jumlah) {
         binding.progressBar.setVisibility(View.VISIBLE);
         APIService api = Utility.getRetrofit().create(APIService.class);
-        Call<<ValueData<Post>> call = api.addPost(userId, content, foto, judul, jumlah);
-        call.enqueue(new Callback<ValueNoData>() {
+        Call<ValueData<Post>> call = api.addPost(userId, content, foto, judul, jumlah);
+        call.enqueue(new Callback<ValueData<Post>>() {
             @Override
-            public void onResponse(Call<<ValueData<Post>> call, Response<<ValueData<Post>> response) {
+            public void onResponse(Call<ValueData<Post>> call, Response<ValueData<Post>> response) {
                 binding.progressBar.setVisibility(View.GONE);
                 if (response.code() == 200) {
                     int success = response.body().getSuccess();
@@ -72,7 +72,7 @@ public class AddPostActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<<ValueData<Post>> call, Throwable t) {
+            public void onFailure(Call<ValueData<Post>> call, Throwable t) {
                 binding.progressBar.setVisibility(View.GONE);
                 System.out.println("Retrofit Error : " + t.getMessage());
                 Toast.makeText(AddPostActivity.this, "Retrofit Error : " + t.getMessage(), Toast.LENGTH_SHORT).show();
