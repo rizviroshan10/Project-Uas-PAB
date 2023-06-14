@@ -13,6 +13,7 @@
         <!-- Customize your theme here. -->
     </style>
     <style name="Theme.library" parent="Base.Theme.library">
+
         <item name="colorOnPrimary">@color/B</item>
         <item name="colorPrimaryVariant">@color/E</item>
     </style>

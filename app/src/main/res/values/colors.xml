@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="A">#BA726B</color>
-    <color name="B">#E4A87A</color>
-    <color name="C">#F6B554</color>
-    <color name="D">#B1BC83</color>
-    <color name="E">#FDD0B9</color>
+    <color name="A">#704B48</color>
+    <color name="B">#4B362B</color>
+    <color name="C">#80643A</color>
+    <color name="D">#687047</color>
+    <color name="E">#B38D7A</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 </resources>
