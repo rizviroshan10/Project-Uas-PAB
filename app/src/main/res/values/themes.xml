@@ -2,13 +2,23 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.library" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-
+        <item name="colorPrimary">@color/B</item>
+        <item name="colorPrimaryVariant">@color/E</item>
         <!-- Customize your theme here. -->
     </style>
     <style name="Base.Theme.library.ActionBar" parent="Theme.MaterialComponents.DayNight">
         <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/D</item>
+        <item name="colorPrimaryVariant">@color/B</item>
         <!-- Customize your theme here. -->
     </style>
-    <style name="Theme.library" parent="Base.Theme.library"> </style>
-    <style name="Theme.library.ActionBar" parent="Base.Theme.library.ActionBar"> </style>
+    <style name="Theme.library" parent="Base.Theme.library">
+        <item name="colorOnPrimary">@color/B</item>
+        <item name="colorPrimaryVariant">@color/E</item>
+    </style>
+    <style name="Theme.library.ActionBar" parent="Base.Theme.library.ActionBar">
+
+        <item name="colorPrimary">@color/D</item>
+        <item name="colorPrimaryVariant">@color/B</item>
+    </style>
 </resources>

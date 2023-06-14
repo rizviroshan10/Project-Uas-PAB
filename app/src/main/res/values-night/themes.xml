@@ -4,7 +4,7 @@
         <!-- Primary brand color. -->
         <!-- Customize your theme here. -->
     </style>
-    <style name="Base.Theme.library.ActionBar" parent="Theme.MaterialComponents.DayNight">
+    <style name="Base.Theme.library1.ActionBar" parent="Theme.MaterialComponents.DayNight">
         <!-- Primary brand color. -->
         <!-- Customize your theme here. -->
     </style>
