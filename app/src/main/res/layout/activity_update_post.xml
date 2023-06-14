@@ -12,40 +12,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_judul"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:counterEnabled="true"
-            app:counterMaxLength="180">
-
-            <EditText
-                android:id="@+id/et_judul"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Judul Post"
-                android:inputType="none"
-                android:maxLength="180"/>
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_foto"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:counterEnabled="true"
-            app:counterMaxLength="180">
-
-            <EditText
-                android:id="@+id/et_foto"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Judul Post"
-                android:layout_marginTop="80dp"
-                android:inputType="none"
-                android:maxLength="180"/>
-
-        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_content"
@@ -58,9 +24,9 @@
                 android:id="@+id/et_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Content Post"
+                android:hint="Deskripsi Singkat"
+                android:layout_marginTop="80dp"
                 android:inputType="none"
-                android:layout_marginTop="160dp"
                 android:maxLength="180"/>
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -76,12 +42,14 @@
                 android:id="@+id/et_jumlah"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Content Post"
+                android:hint="jumlah buku"
                 android:inputType="none"
-                android:layout_marginTop="240dp"
+                android:layout_marginTop="160dp"
                 android:maxLength="180"/>
 
         </com.google.android.material.textfield.TextInputLayout>
+
+
 
         <Button
             android:id="@+id/btn_update"
@@ -90,8 +58,8 @@
             android:text="Update Post"
             android:backgroundTint="@color/black"
             android:layout_alignParentEnd="true"
-            android:layout_below="@+id/til_content"
-            android:layout_marginTop="80dp"/>
+            android:layout_below="@+id/til_jumlah"
+            android:layout_marginTop="40dp"/>
 
         <ProgressBar
             android:id="@+id/progress_bar"

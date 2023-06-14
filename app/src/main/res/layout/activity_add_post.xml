@@ -62,7 +62,7 @@
                 android:id="@+id/et_jumlah"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="00"
+                android:hint="jumlah buku"
                 android:inputType="none"
                 android:maxLength="180"
                 />
@@ -70,7 +70,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_foto"
+            android:id="@+id/til_sampul"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:counterEnabled="true"
@@ -78,7 +78,7 @@
             android:layout_below="@id/til_jumlah">
 
             <EditText
-                android:id="@+id/et_foto"
+                android:id="@+id/et_sampul"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Foto Sampul"
@@ -95,7 +95,7 @@
             android:layout_height="wrap_content"
             android:text="Add Post"
             android:layout_alignParentEnd="true"
-            android:layout_below="@+id/til_foto"
+            android:layout_below="@+id/til_sampul"
             android:layout_marginTop="16dp"/>
 
         <ProgressBar

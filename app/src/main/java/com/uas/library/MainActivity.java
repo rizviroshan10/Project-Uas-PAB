@@ -103,10 +103,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void deletePost(String id) {
         APIService api = Utility.getRetrofit().create(APIService.class);
-        Call<ValueData<User>> call = api.deletePost(id);
-        call.enqueue(new Callback<ValueData<User>>() {
+        Call<ValueNoData> call = api.deletePost(id);
+        call.enqueue(new Callback<ValueNoData>() {
             @Override
-            public void onResponse(Call<ValueData<User>> call, Response<ValueData<User>> response) {
+            public void onResponse(Call<ValueNoData> call, Response<ValueNoData> response) {
                 if (response.code() == 200) {
                     int success = response.body().getSuccess();
                     String message = response.body().getMessage();
@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<ValueData<User>> call, Throwable t) {
+            public void onFailure(Call<ValueNoData> call, Throwable t) {
                 System.out.println("Retrofit Error : " + t.getMessage());
                 Toast.makeText(MainActivity.this, "Retrofit Error : " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }

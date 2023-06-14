@@ -13,10 +13,10 @@
         android:background="#696A68">
 
         <ImageView
-            android:id="@+id/iv_foto"
+            android:id="@+id/iv_sampul"
             android:layout_width="75dp"
             android:layout_height="100dp"
-            android:src="@mipmap/ic_launcher"
+            android:src="@drawable/bg2"
             android:scaleType="centerCrop"
             android:layout_marginRight="6dp"/>
 
@@ -28,16 +28,16 @@
             android:textColor="@color/black"
             android:textSize="17sp"
             android:textStyle="bold"
-            android:layout_toRightOf="@id/iv_foto"/>
+            android:layout_toRightOf="@id/iv_sampul"/>
 
 
         <TextView
-            android:id="@+id/tv_deskripsi"
+            android:id="@+id/tv_content"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Deskripsi Buku"
             android:textColor="@color/black"
-            android:layout_toRightOf="@+id/iv_foto"
+            android:layout_toRightOf="@+id/iv_sampul"
             android:layout_below="@+id/tv_judul"
             android:maxLines="2"
             android:ellipsize="end"
@@ -49,8 +49,8 @@
             android:text="00 "
 
             android:textColor="@color/black"
-            android:layout_toRightOf="@+id/iv_foto"
-            android:layout_below="@+id/tv_deskripsi"
+            android:layout_toRightOf="@+id/iv_sampul"
+            android:layout_below="@+id/tv_content"
             android:layout_marginTop="40dp"
             android:maxLines="2"
             android:ellipsize="end"

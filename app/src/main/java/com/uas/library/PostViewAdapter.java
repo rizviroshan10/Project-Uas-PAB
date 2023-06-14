@@ -42,9 +42,9 @@ public class PostViewAdapter extends RecyclerView.Adapter<PostViewAdapter.ViewHo
 
         Post post = data.get(pos);
         holder.postItemBinding.tvJudul.setText(post.getJudul());
-        holder.postItemBinding.tvDeskripsi.setText(post.getDeskripsi());
+        holder.postItemBinding.tvContent.setText(post.getContent());
         holder.postItemBinding.tvJumlah.setText(post.getJumlah());
-        Glide.with(holder.itemView).load(post.getSampul()).into(holder.postItemBinding.ivFoto);
+        Glide.with(holder.itemView).load(post.getSampul()).into(holder.postItemBinding.ivSampul);
 
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override

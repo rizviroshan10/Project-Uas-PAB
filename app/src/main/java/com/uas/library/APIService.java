@@ -33,29 +33,21 @@ public interface APIService {
 
     @FormUrlEncoded
     @POST("post")
-    Call<ValueData<User>> addPost(
-            @Field("id") String UserId,
+    Call<ValueNoData> addPost(
+            @Field("user_id") String UserId,
             @Field("judul") String judul,
             @Field("content") String content,
-            @Field("foto") String foto,
-            @Field("jumlah") int jumlah);
-
-
-
-
-
-
+            @Field("jumlah") String jumlah,
+            @Field("sampul") String sampul);
 
     @FormUrlEncoded
     @PUT("post")
-    Call<ValueData<User>> updatePost(
+    Call<ValueNoData> updatePost(
                                  @Field("id") String id,
-                                 @Field("judul") String judul,
                                  @Field("content") String content,
-                                 @Field("foto") String foto,
-                                 @Field("jumlah") int jumlah);
+                                 @Field("jumlah") String jumlah);
 
 
     @DELETE("post/{id}")
-    Call<ValueData<User>> deletePost(@Path("id") String id);
+    Call<ValueNoData> deletePost(@Path("id") String id);
 }

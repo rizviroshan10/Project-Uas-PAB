@@ -7,8 +7,8 @@ public class Post implements Parcelable {
     private String id;
     private String judul;
     private String user_id;
-    private String deskripsi;
-    private int jumlah;
+    private String content;
+    private String jumlah;
     private String sampul;
     private String username;
 
@@ -16,8 +16,8 @@ public class Post implements Parcelable {
         id = in.readString();
         judul = in.readString();
         user_id = in.readString();
-        deskripsi = in.readString();
-        jumlah = in.readInt();
+        content = in.readString();
+        jumlah = in.readString();
         username = in.readString();
         sampul = in.readString();
     }
@@ -27,8 +27,8 @@ public class Post implements Parcelable {
         dest.writeString(id);
         dest.writeString(judul);
         dest.writeString(user_id);
-        dest.writeString(deskripsi);
-        dest.writeInt(jumlah);
+        dest.writeString(content);
+        dest.writeString(jumlah);
         dest.writeString(username);
         dest.writeString(sampul);
     }
@@ -81,19 +81,19 @@ public class Post implements Parcelable {
         this.user_id = user_id;
     }
 
-    public String getDeskripsi() {
-        return deskripsi;
+    public String getContent() {
+        return content;
     }
 
-    public void setDeskripsi(String deskripsi) {
-        this.deskripsi = deskripsi;
+    public void setContent(String content) {
+        this.content = content;
     }
 
-    public int getJumlah() {
+    public String getJumlah() {
         return jumlah;
     }
 
-    public void setJumlah(int jumlah) {
+    public void setJumlah(String jumlah) {
         this.jumlah = jumlah;
     }
 
