@@ -69,6 +69,7 @@ public class UpdatePostActivity extends AppCompatActivity {
 
                     if (success == 1) {
                         Toast.makeText(UpdatePostActivity.this, message, Toast.LENGTH_SHORT).show();
+                        finish();
                     } else {
                         Toast.makeText(UpdatePostActivity.this, message, Toast.LENGTH_SHORT).show();
                     }
